@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Missão Artemis | NASA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Roboto&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Roboto',sans-serif;
+    background:linear-gradient(to bottom,#020824,#000);
+    color:#e6f1ff;
+}
+
+.stars{
+    position:fixed;
+    inset:0;
+    background:url("https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/img/stars.png");
+    animation:moveStars 90s linear infinite;
+    z-index:-1;
+}
+@keyframes moveStars{
+    to{background-position:-14000px 7000px;}
+}
+
+header{
+    text-align:center;
+    padding:70px 20px;
+}
+header img{
+    width:120px;
+}
+h1{
+    font-family:'Orbitron',sans-serif;
+    letter-spacing:5px;
+    font-size:3.2em;
+    margin:20px 0;
+}
+.subtitle{
+    max-width:900px;
+    margin:auto;
+    font-size:1.15em;
+    color:#bcd6ff;
+}
+
+section{
+    padding:90px 30px;
+    max-width:1400px;
+    margin:auto;
+}
+
+h2{
+    text-align:center;
+    font-family:'Orbitron',sans-serif;
+    color:#ffd60a;
+    font-size:2.2em;
+    margin-bottom:50px;
+}
+
+.text-box{
+    max-width:900px;
+    margin:auto;
+    font-size:1.1em;
+    line-height:1.7;
+    color:#d6e6ff;
+    text-align:center;
+}
+
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+    margin-top:60px;
+}
+
+.card{
+    background:#02142f;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 0 25px rgba(0,140,255,.35);
+    transition:.3s;
+    cursor:pointer;
+}
+.card:hover{
+    transform:translateY(-10px) scale(1.03);
+}
+.card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+.card span{
+    display:block;
+    padding:18px;
+    text-align:center;
+    background:#001d3d;
+}
+
+.buttons{
+    text-align:center;
+    margin-top:60px;
+}
+button{
+    padding:14px 30px;
+    margin:12px;
+    border-radius:40px;
+    border:none;
+    background:#ffd60a;
+    font-weight:bold;
+    cursor:pointer;
+}
+button:hover{transform:scale(1.08)}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#000814;
+    color:#9bbcff;
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.9);
+    justify-content:center;
+    align-items:center;
+    z-index:10;
+}
+.modal img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:20px;
+}
+
+.rocket{
+    font-size:85px;
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    cursor:pointer;
+}
+.launch{
+    animation:launch 2.8s ease-in forwards;
+}
+@keyframes launch{
+    to{bottom:120%;transform:rotate(-25deg);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<header>
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg">
+<h1>MISSÃO ARTEMIS</h1>
+<p class="subtitle">
+A Missão Artemis representa o retorno da humanidade à Lua com inovação,
+ciência e inclusão, abrindo caminho para futuras missões a Marte.
+</p>
+</header>
+
+<!-- SOBRE A MISSÃO -->
+<section>
+<h2>Sobre a Missão</h2>
+<p class="text-box">
+A Missão Artemis é um programa da NASA que tem como objetivo levar
+astronautas novamente à Lua após mais de 50 anos. O projeto utiliza
+tecnologia de ponta, como o foguete SLS e a nave Orion, preparando a
+humanidade para explorações mais distantes no espaço.
+</p>
+</section>
+
+<!-- MULHER E INCLUSÃO -->
+<section>
+<h2>Mulher e Inclusão na Exploração Espacial</h2>
+<p class="text-box">
+Um dos maiores marcos da Missão Artemis é promover a inclusão.
+Pela primeira vez, uma mulher e uma pessoa negra pisarão na Lua,
+representando diversidade, igualdade e novas oportunidades na ciência
+e na exploração espacial.
+</p>
+
+<div class="galeria">
+<div class="card" onclick="openModal(this)">
+<img src="https://static.ndmais.com.br/2026/03/missao-artemis-ii-da-nasa-levara-a-primeira-mulher-e-o-primeiro-homem-negro-a-lua.jpg">
+<span>Tripulação Histórica da Artemis II</span>
+</div>
+
+<div class="card" onclick="openModal(this)">
+<img src="https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/4594/live/e9c25b30-35fe-11f1-879d-1b2f5c3919b8.jpg.webp">
+<span>Astronautas Representando Diversidade</span>
+</div>
+</div>
+</section>
+
+<!-- GALERIA -->
+<section>
+<h2>Exploração e Tecnologia</h2>
+
+<div class="galeria">
+<div class="card" onclick="openModal(this)">
+<img src="https://media.gazetadopovo.com.br/2026/04/01202602/c54bd9ded841d33353a011236f10ceb79cae8840w-660x372.jpg.webp">
+<span>Lançamento do Foguete SLS</span>
+</div>
+
+<div class="card" onclick="openModal(this)">
+<img src="https://img.odcdn.com.br/wp-content/uploads/2023/01/artemis-3-nasa.jpg">
+<span>Missão Artemis III</span>
+</div>
+
+<div class="card" onclick="openModal(this)">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVqrOIvJkmrMEgL3ZqXXiED1f_QT9HOHwqEg&s">
+<span>Conceito Artístico Lunar</span>
+</div>
+</div>
+
+<div class="buttons">
+<button onclick="alert('🚀 Missão Artemis iniciada!')">Iniciar Missão</button>
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})">Voltar ao Topo</button>
+</div>
+</section>
+
+<footer>
+© 2026 • Projeto Educacional • Missão Artemis | NASA
+</footer>
+
+<div class="rocket" id="rocket" onclick="launchRocket()">🚀</div>
+
+<div class="modal" id="modal" onclick="closeModal()">
+<img id="modalImg">
+</div>
+
+<script>
+function launchRocket(){
+document.getElementById("rocket").classList.add("launch");
+}
+function openModal(card){
+document.getElementById("modal").style.display="flex";
+document.getElementById("modalImg").src=card.querySelector("img").src;
+}
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+</script>
+
+</body>
+</html>
