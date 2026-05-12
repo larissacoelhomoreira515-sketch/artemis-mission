@@ -63,4 +63,4 @@ jobs:
         with:
           app-name: 'projeto-artemis-Larissa'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_63D137B3D44A4B279683A57347421583 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8A7649E3FF674A5EB3C51597AE5AF097 }}
